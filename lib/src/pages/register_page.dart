@@ -43,7 +43,7 @@ class RegisterPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               RaisedButton(
-                  color: Colors.blue,
+                  color: Color(0xFFB2A81BE),
                   shape: StadiumBorder(),
                   child: Container(
                     width: 100,

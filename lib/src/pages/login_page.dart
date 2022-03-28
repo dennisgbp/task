@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
                 isPassword: true,
               ),
               RaisedButton(
-                color: Colors.blue,
+                color: Color(0xFFB2A81BE),
                   shape: StadiumBorder(),
                   child: Container(
                     width: 100,
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
                 child: Text('Si aún no estás registrado \n ¡Ingresa Aquí!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.blue[600],
+                        color: Color(0xFFB2A81BE),
                         fontSize: 18,
                         fontWeight: FontWeight.bold
                     )

@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task/src/widgets/card_task.dart';
+import 'package:task/src/routes/app_pages.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Tareas', style: TextStyle(color: Colors.black87)), backgroundColor: Colors.white54),
+      appBar: AppBar(
+        elevation: 1,
+          title: Text('Listado de Tareas',
+              style: TextStyle(color: Color(0xFFB2A81BE))),
+          backgroundColor: Colors.white54),
+
       body: SingleChildScrollView(
         child: Column(
+
           children: [
             CardTask(
               task: 'Tarea #1 App Task',
@@ -40,6 +47,14 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton:  FloatingActionButton(
+          child: Icon(Icons.add, size: 40,),
+          backgroundColor: Color(0xFFB2A81BE),
+          elevation: 2,
+          onPressed: () {
+            Get.toNamed(Routes.ADD_TASK);
+          }
       ),
     );
   }

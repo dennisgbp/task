@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:task/src/pages/add_taks_page.dart';
+import 'package:task/src/pages/edit_task_page.dart';
 import 'package:task/src/pages/home_page.dart';
 import 'package:task/src/pages/login_page.dart';
 import 'package:task/src/pages/register_page.dart';
@@ -20,6 +22,16 @@ abstract class AppPages {
     GetPage(
       name: Routes.HOME,
       page:()=> HomePage(),
+      transition: Transition.native,
+    ),
+    GetPage(
+      name: Routes.ADD_TASK,
+      page:()=> AddTaskPage(),
+      transition: Transition.native,
+    ),
+    GetPage(
+      name: Routes.EDITTASK,
+      page:()=> EditTaskPage(),
       transition: Transition.native,
     ),
   ];
