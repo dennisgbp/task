@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:task/src/widgets/card_task.dart';
 import 'package:task/src/routes/app_pages.dart';
 
-class HomePage extends StatelessWidget {
+class HomeTaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton:  FloatingActionButton(
-          child: Icon(Icons.add, size: 40,),
+          child: Icon(Icons.add, size: 40),
           backgroundColor: Color(0xFFB2A81BE),
           elevation: 2,
           onPressed: () {

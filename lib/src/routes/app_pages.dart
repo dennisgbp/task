@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:task/src/pages/add_taks_page.dart';
+import 'package:task/src/pages/add_task_page.dart';
 import 'package:task/src/pages/edit_task_page.dart';
-import 'package:task/src/pages/home_page.dart';
+import 'package:task/src/pages/home_task_page.dart';
 import 'package:task/src/pages/login_page.dart';
 import 'package:task/src/pages/register_page.dart';
 part './app_routes.dart';
@@ -21,7 +21,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page:()=> HomePage(),
+      page:()=> HomeTaskPage(),
       transition: Transition.native,
     ),
     GetPage(
@@ -30,7 +30,7 @@ abstract class AppPages {
       transition: Transition.native,
     ),
     GetPage(
-      name: Routes.EDITTASK,
+      name: Routes.EDIT_TASK,
       page:()=> EditTaskPage(),
       transition: Transition.native,
     ),

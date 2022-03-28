@@ -26,5 +26,9 @@ class TaskModel {
       updateAt: json["updateAt"],
     );
   }
+@override
+  String toString() {
+    return "completed: ${this.completed}" "id: ${this.id}" "description: ${description}" "owner: ${owner}" "createdAt: ${createdAt}" "updateAt: ${updateAt}";
+  }
 
 }

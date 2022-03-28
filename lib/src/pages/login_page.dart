@@ -6,6 +6,10 @@ import 'package:task/src/widgets/text_input.dart';
 
 
 class LoginPage extends StatelessWidget {
+  //TODO:
+  final emailCtrl = TextEditingController();
+  final passCtrl = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +31,12 @@ class LoginPage extends StatelessWidget {
                 icon: Icons.mail_outline,
                 placeholder: 'Correo',
                 keyboardType: TextInputType.emailAddress,
-                //textController: emailCtrl,
+                textController: emailCtrl,
               ),
               TextInput(
                 icon: Icons.lock_outline,
                 placeholder: 'Contraseña',
-                //textController: passCtrl,
+                textController: passCtrl,
                 isPassword: true,
               ),
               RaisedButton(

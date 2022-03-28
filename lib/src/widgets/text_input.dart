@@ -4,7 +4,7 @@ class TextInput extends StatelessWidget {
   //const CustomInput({Key? key}) : super(key: key);
   final IconData icon;
   final String placeholder;
-  //final TextEditingController textController;
+  final TextEditingController textController;
   final TextInputType keyboardType;
   final bool isPassword;
 
@@ -12,7 +12,7 @@ class TextInput extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.placeholder,
-    //required this.textController,
+    required this.textController,
     this.keyboardType = TextInputType.text,
     this.isPassword = false
   }) : super(key: key);
@@ -33,7 +33,7 @@ class TextInput extends StatelessWidget {
         ],
       ),
       child: TextField(
-        //controller: this.textController,
+        controller: this.textController,
         autocorrect: false,
         keyboardType: this.keyboardType,
         obscureText: this.isPassword,

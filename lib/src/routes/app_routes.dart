@@ -6,5 +6,5 @@ abstract class Routes{
   static const REGISTER = "/register";
   static const HOME = "/home";
   static const ADD_TASK = "/addTask";
-  static const EDITTASK= "/editTask";
+  static const EDIT_TASK= "/editTask";
 }
