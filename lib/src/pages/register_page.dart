@@ -2,26 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:task/src/controllers/register_user_controller.dart';
+import 'package:task/src/data_source/local_data_source.dart';
+import 'package:task/src/models/user.dart';
+import 'package:task/src/models/user_adapter.dart';
 import 'package:task/src/routes/app_pages.dart';
 import 'package:task/src/widgets/text_input.dart';
 import 'package:hive/hive.dart';
 
 Future main() async {
-  await Hive.initFlutter();
 
-  await Hive.openBox('users');
+  //Inicializando
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter()); //extends TypeAdapter<UserModel>...
+  //Abriendo Caja
+  await Hive.openBox<User>('users');
   runApp(RegisterPage());
 }
 
 class RegisterPage extends StatelessWidget {
   RegisterUserController _controller = RegisterUserController();
-
+  //Box box = Hive.box("users");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //appBar: AppBar(title: Text('Register Page')),
       body: SingleChildScrollView(
+
         physics: BouncingScrollPhysics(),
         child: GetBuilder<RegisterUserController>(
           init: _controller,
@@ -77,11 +84,15 @@ class RegisterPage extends StatelessWidget {
                       //child: Text('Ingrese', style: TextStyle(color: Colors.white54, fontSize: 18)),
                       onPressed: () {
                         Get.toNamed(Routes.HOME);
-                        _.RegisterUser(_.nameCtrl.text, _.emailCtrl.text, _.passCtrl.text, _.ageCtrl.text);
+                        //Boxes.getUsers().listenable();
+                        //Hive.box<UserModel>('users');
+
+                        //_.RegisterUser(_.nameCtrl.text, _.emailCtrl.text, _.passCtrl.text, _.ageCtrl.text);
                         print(_.nameCtrl.text);
                         print(_.passCtrl.text);
                         print(_.emailCtrl.text);
                         print(_.ageCtrl.text);
+                        //Hive.close();
                       }),
                 ],
               ),
